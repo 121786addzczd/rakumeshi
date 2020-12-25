@@ -1,0 +1,13 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+      <%= form_with(model: @post, url: posts_path,  local: true) do |f| %>
+        <div class="form">
+          <div class="form-body">
+            <%= f.text_area :content, placeholder:" 40文字まで投稿できます", maxlength:"40" %>
+            <%= f.submit "投稿する"%>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
