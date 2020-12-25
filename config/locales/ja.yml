@@ -1,5 +1,7 @@
 ja:
- activerecord:
-   attributes:
-     post:
-       content: 内容
+  activerecord:
+    attributes:
+      post:
+        content: 内容
+      user:
+        nickname: 名前
