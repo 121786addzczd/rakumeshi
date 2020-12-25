@@ -1,0 +1,31 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">ログイン</div>
+    <div class="form users-form">
+      <div class="form-body">
+
+        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+          <div class="field">
+            <%= f.label :email, "メールアドレス" %>
+            <%= f.email_field :email %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, "パスワード   (6文字以上)" %>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation, "パスワード再入力" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "ログイン", class: :form__btn  %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
