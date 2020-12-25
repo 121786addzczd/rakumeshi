@@ -13,6 +13,10 @@
             <%= f.text_field :nickname %>
           </div>
           <div class="field">
+              <%= f.label :image, "プロフィール画像" %><br />
+              <%= f.file_field :image, class: :form_image%>
+            </div>
+          <div class="field">
             <%= f.label :email, "メールアドレス" %>
             <%= f.email_field :email %>
           </div>

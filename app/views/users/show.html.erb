@@ -1,6 +1,11 @@
 <div class="main user-show">
   <div class="container">
     <div class="user">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image %>
+      <% else %>
+        <%= image_tag "/images/default.jpg", class: "user-img"%>
+      <% end %>
       <h2><%= @user.nickname %></h2>
       <p><%= @user.email %></p>
       <%= link_to "編集", edit_user_path(@user.id)  %>
