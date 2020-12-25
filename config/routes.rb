@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   get "about" => "home#about"
 
-  resources :posts, only: [:index, :new, :create, :show]
+  resources :posts
 end
