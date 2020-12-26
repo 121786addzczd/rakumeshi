@@ -15,6 +15,18 @@
       <div class="post-time">
         <%= @post.created_at %>
       </div>
+
+      <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+        <%= link_to post_like_path(@post.id), method: :delete do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+        <% end%>
+      <% else %>
+        <%= link_to post_likes_path(@post.id), method: :post do %>
+          <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+      <%= @post.likes.count %>
+
       <div class="post-menus">
         <% if @post.user.id == current_user.id %>
           <%= link_to "編集", edit_post_path(@post.id) %>
