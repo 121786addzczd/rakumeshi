@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = @post.user
   end
 
   def edit
@@ -38,9 +39,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    flash[:notice] = "投稿を削除しました"
-    redirect_to posts_index_path
+    if @post.user.id == current_user.id
+      @post.destroy
+      flash[:notice] = "投稿を削除しました"
+      redirect_to posts_index_path
+    else
+      redirect_to posts_index_path
+    end
   end
 
 
