@@ -5,8 +5,14 @@ Rails.application.routes.draw do
 
   get "about" => "home#about"
 
-  resources :posts
+  resources :posts do
+    resources :likes, only: [:create, :destroy]
+  end
 
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      get :likes
+    end
+  end
 
 end

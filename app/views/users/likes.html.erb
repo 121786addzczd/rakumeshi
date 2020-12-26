@@ -8,18 +8,19 @@
       <% end %>
       <h2><%= @user.nickname %></h2>
       <p><%= @user.email %></p>
-
       <% if @user.id == current_user.id %>
-        <%= link_to "編集", edit_user_path(@user.id)  %>
+        <%= link_to "編集", edit_user_path(@user.id) %>
       <% end %>
     </div>
 
     <ul class="user-tabs">
-      <li class="active"><%= link_to "投稿", user_path(@user.id) %></li>
-      <li><%= link_to "いいね!", likes_user_path(@user.id) %></li>
+      <li><%= link_to "投稿", user_path(@user.id) %></li>
+      <li class="active"><%= link_to "いいね!", likes_user_path(@user.id) %></li>
     </ul>
 
-    <% @user.posts.each do |post| %>
+    <% @likes.each do |like| %>
+      <% post = Post.find_by(id: like.post_id) %>
+
       <div class="posts-index-item">
         <div class="post-left">
           <% if post.user.image.attached? %>
