@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    unless current_user == @user
+    if @user.id != current_user.id
       redirect_to user_path
     end
   end

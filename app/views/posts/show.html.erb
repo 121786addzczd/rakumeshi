@@ -1,6 +1,14 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+      <div class="post-user-name">
+        <% if @user.image.attached? %>
+          <%= image_tag @user.image %>
+        <% else %>
+          <%= image_tag "/images/default.jpg", class: "user-img"%>
+        <% end %>
+        <%= link_to @user.nickname, user_path(@user.id) %>
+      </div>
       <p>
         <%= @post.content %>
       </p>
@@ -8,8 +16,10 @@
         <%= @post.created_at %>
       </div>
       <div class="post-menus">
-        <%= link_to "編集", edit_post_path(@post.id) %>
-        <%= link_to "削除", post_path(@post.id), method: :delete %>
+        <% if @post.user.id == current_user.id %>
+          <%= link_to "編集", edit_post_path(@post.id) %>
+          <%= link_to "削除", post_path(@post.id), method: :delete %>
+        <% end %>
       </div>
     </div>
   </div>
