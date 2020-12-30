@@ -15,8 +15,7 @@
 **他にも、branchを切る -> 開発を行う -> pushする -> pull requestを送信する -> mergeする」といったチーム開発の流れを疑似的に再現するなど、より実践的な環境で作業を進めました。**
 
 ## DEMO
-https://user-images.githubusercontent.com/72346611/103330535-40135480-4aa5-11eb-98a5-c489402723bc.mp4
-
+![b06c4e600013ff3b36437ac36599e160](https://user-images.githubusercontent.com/72346611/103330704-068f1900-4aa6-11eb-88b3-f7364b37241a.gif)
 
 
 ## URL
