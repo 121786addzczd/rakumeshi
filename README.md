@@ -17,6 +17,9 @@
 ## DEMO
 ![b06c4e600013ff3b36437ac36599e160](https://user-images.githubusercontent.com/72346611/103330704-068f1900-4aa6-11eb-88b3-f7364b37241a.gif)
 
+![4048587e6b768b6fe6e416e14f6cb514](https://user-images.githubusercontent.com/72346611/103330817-7ef5da00-4aa6-11eb-89c5-b0f7d3b30923.gif)
+
+
 
 ## URL
 https://rakumeshi.com
@@ -51,5 +54,11 @@ Rails 6.0.0
 - パンくずリスト（gretel）
 -各種API（Google、Facebook）
 
+## トップページ
+![](https://i.gyazo.com/5dfeecaf00e6a88d30a164950a3d8246.jpg)
 
+## マイページ 自分の投稿一覧
+![](https://i.gyazo.com/e91096d3914ceaf6c039e50efad111e4.png)
 
+## 自分のいいね一覧
+![](https://i.gyazo.com/a8744fbe1b823e02557e78b4f652d8fc.png)
