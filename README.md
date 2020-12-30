@@ -22,7 +22,7 @@ https://rakumeshi.com
 
 メールアドレス：test@example.com
 パスワード：qwer1234
-※ページ内には「簡単ログイン（テストユーザーとしてワンクリックでログインができる機能）」も実装してありますので、そちらをご利用いただけると幸いです。
+※ページ内には「簡単ログイン（ゲストユーザーとしてワンクリックでログインができる機能）」も実装してありますので、そちらをご利用いただけると幸いです。
 
 ## 開発環境
 Ruby 2.6.5
@@ -31,4 +31,22 @@ Rails 6.0.0
 
 ## ER図
 ![](https://i.gyazo.com/f6bb2c43af888bea14bb8c09ac43b889.png)
+
+## 各種機能＆導入技術
+- プラットフォーム（Heroku）
+- データベース（MySQL）
+- テスト（Rspec、Capybara、factory_bot）
+- 自動テスト＆自動デプロイ（Circleci）
+- コードチェック（rubocop）
+- ユーザー登録＆ログイン（devise)
+- 画像アップロード（carrierwave、mini_magick、 AWS S3）
+- カレンダー（simple_calendar）
+- いいね、ブックマーク（Ajax）
+- エディタ（vsコード）
+- 検索（ransack）
+- アプリケーションメッセージ日本語化(rails-i18n)
+- パンくずリスト（gretel）
+-各種API（Google、Facebook）
+
+
 
