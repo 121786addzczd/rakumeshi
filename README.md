@@ -22,7 +22,7 @@
 
 
 ## URL
-https://rakumeshi.com
+https://rakumeshi.xxxxxxxx.com
 
 テストユーザーアカウント
 
