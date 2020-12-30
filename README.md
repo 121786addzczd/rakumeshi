@@ -26,6 +26,7 @@ https://rakumeshi.com
 
 ## 開発環境
 Ruby 2.6.5
+
 Rails 6.0.0
 
 ## ER図
