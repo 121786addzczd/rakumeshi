@@ -188,6 +188,7 @@ header {
 
 .form-body {
   padding: 30px;
+  margin-bottom: 20px;
 }
 
 .form-error {
@@ -216,11 +217,11 @@ header {
   color: white;
   cursor: pointer;
   font-weight: 300;
-  width: 120px;
+  width: 100%;
   border-radius: 2px;
   margin-top: 8px;
   margin-bottom: 0;
-  float: right;
+
 }
 
 .form-body:after {
