@@ -15,3 +15,24 @@
  */
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+/* パンくず */
+.breadcrumbs a{
+  color:rgb(38, 38, 38);
+}
+
+.breadcrumbs a:hover {
+  color: rgb(72, 117, 149);
+  text-decoration: underline;
+}
+
+.breadcrumbs span{
+  color:rgb(38, 38, 38);
+  opacity: 0.6;
+}
+
+.pankuzu {
+  position: absolute;
+  top: 64px;
+  z-index: 9;
+}

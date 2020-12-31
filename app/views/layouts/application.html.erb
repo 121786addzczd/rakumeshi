@@ -17,7 +17,9 @@
         <%= flash[:notice] %>
       </div>
     <% end %>
-
+    <div class="pankuzu">
+      <%= breadcrumbs separator: " &rsaquo; " %>
+    </div>
       <%= yield %>
   </body>
 </html>
