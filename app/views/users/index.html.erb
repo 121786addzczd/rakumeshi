@@ -12,6 +12,13 @@
         </div>
         <div class="user-right">
           <%= link_to user.nickname, user_path(user.id) %>
+          <% if current_user != user %>
+            <% if user.followed_by?(current_user) %>
+              <p><%=link_to "フォロー済み", user_relationships_path(user.id), method: :delete %></p>
+            <% else %>
+              <p><%=link_to "フォローする", user_relationships_path(user.id), method: :post %></p>
+            <% end %>
+          <% end %>
         </div>
       </div>
     <% end %>
