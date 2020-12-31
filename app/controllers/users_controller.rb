@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
 
-  before_action :set_user, only: [:show, :edit, :update, :likes]
+  before_action :set_user, only: [:show, :edit, :update, :likes, :follows, :followers]
 
   def index
     @users = User.all
@@ -30,6 +30,14 @@ class UsersController < ApplicationController
   # 変数@userに紐づくLikeデータを取得
   def likes
     @likes = Like.where(user_id: @user.id)
+  end
+
+  def follows
+    @users = @user.followings
+  end
+
+  def followers
+    @users = @user.followers
   end
 
   private

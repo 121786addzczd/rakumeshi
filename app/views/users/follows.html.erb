@@ -28,27 +28,25 @@
 
     <ul class="user-tabs">
       <li><%= link_to "投稿", user_path(@user.id) %></li>
-      <li class="active"><%= link_to "いいね!", likes_user_path(@user.id) %></li>
-      <li><%=link_to "フォロー", follows_user_path(@user.id) %></li>
+      <li ><%= link_to "いいね!", likes_user_path(@user.id) %></li>
+      <li class="active"><%=link_to "フォロー", follows_user_path(@user.id) %></li>
       <li><%=link_to "フォロワー", followers_user_path(@user.id) %></li>
     </ul>
 
-    <% @likes.each do |like| %>
-      <% post = Post.find_by(id: like.post_id) %>
+    <% @users.each do |user| %>
 
       <div class="posts-index-item">
         <div class="post-left">
-          <% if post.user.image.attached? %>
-            <%= image_tag post.user.image %>
+          <% if user.image.attached? %>
+            <%= image_tag user.image %>
           <% else %>
             <%= image_tag "/images/default.jpg", class: "user-img"%>
           <% end %>
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <%= link_to post.user.nickname, post_path(post.id) %>
+            <%= link_to user.nickname, user_path(user.id) %>
           </div>
-          <%= link_to post.content, post_path(post.id) %>
         </div>
       </div>
     <% end %>

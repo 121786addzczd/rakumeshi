@@ -8,6 +8,18 @@
       <% end %>
       <h2><%= @user.nickname %></h2>
       <p><%= @user.email %></p>
+      <p>
+      フォロー数：<%= link_to @user.followings.count, follows_user_path(@user.id), id:"follow-count" %>
+      フォロワー数：<%= link_to @user.followers.count, followers_user_path(@user.id), id:"follow-count" %>
+      </p>
+
+      <% if current_user != @user %>
+        <% if @user.followed_by?(current_user) %>
+          <p><%=link_to "フォロー済み", user_relationships_path(@user.id), method: :delete %></p>
+        <% else %>
+          <p><%=link_to "フォローする", user_relationships_path(@user.id), method: :post %></p>
+        <% end %>
+      <% end %>
 
       <% if @user.id == current_user.id %>
         <%= link_to "編集", edit_user_path(@user.id)  %>
@@ -16,7 +28,9 @@
 
     <ul class="user-tabs">
       <li class="active"><%= link_to "投稿", user_path(@user.id) %></li>
-      <li><%= link_to "いいね!", likes_user_path(@user.id) %></li>
+      <li ><%= link_to "いいね!", likes_user_path(@user.id) %></li>
+      <li><%=link_to "フォロー", follows_user_path(@user.id) %></li>
+      <li><%=link_to "フォロワー", followers_user_path(@user.id) %></li>
     </ul>
 
     <% @user.posts.each do |post| %>
