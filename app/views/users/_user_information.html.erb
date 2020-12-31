@@ -1,0 +1,26 @@
+<div class="user">
+  <% if @user.image.attached? %>
+    <%= image_tag @user.image %>
+  <% else %>
+    <%= image_tag "/images/default.jpg", class: "user-img"%>
+  <% end %>
+  <h2><%= @user.nickname %></h2>
+  <p><%= @user.email %></p>
+  <P>投稿数:<%= link_to  @user.posts.count, user_path(@user.id), id:"follow-count" %></p>
+  <p>
+  フォロー数：<%= link_to @user.followings.count, follows_user_path(@user.id), id:"follow-count" %>
+  フォロワー数：<%= link_to @user.followers.count, followers_user_path(@user.id), id:"follow-count" %>
+  </p>
+
+  <% if current_user != @user %>
+    <% if @user.followed_by?(current_user) %>
+      <p><%=link_to "フォロー済み", user_relationships_path(@user.id), method: :delete %></p>
+    <% else %>
+      <p><%=link_to "フォローする", user_relationships_path(@user.id), method: :post %></p>
+    <% end %>
+  <% end %>
+
+  <% if @user.id == current_user.id %>
+    <%= link_to "編集", edit_user_path(@user.id) %>
+  <% end %>
+</div>
