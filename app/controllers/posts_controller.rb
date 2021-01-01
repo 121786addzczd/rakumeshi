@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def show
     @user = @post.user
+    @like = @post.likes
   end
 
   def edit
