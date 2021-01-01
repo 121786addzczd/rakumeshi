@@ -36,3 +36,29 @@
   top: 64px;
   z-index: 9;
 }
+
+// topページにスクロールするボタン
+#js-page_top {
+  position: fixed;
+  bottom: 3rem;
+  right: 20px;
+  z-index: 3;
+}
+#js-page_top a {
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.0em;
+}
+#js-page_top a:hover {
+  background-color: #666;
+  text-decoration: none;
+}
