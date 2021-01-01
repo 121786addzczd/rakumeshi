@@ -1,0 +1,13 @@
+<h4 class="comments-header">＜ コメント一覧 ＞</h4>
+<% post.comments.each do |comment| %>
+  <div class="comment-list">
+    <span class="fas fa-user" ><%= link_to comment.user.nickname, user_path(comment.user.id), class: "comment-list-user" %> : </span>
+    <span class="comment-text"><%= comment.text %></span>
+    <% if comment.user == current_user %>
+      <%= link_to  post_comment_path(post.id, comment), method: :delete, remote: true, class: "delete-comment" do %>
+        <span class="fas fa-trash-alt"></span>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+

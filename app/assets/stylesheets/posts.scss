@@ -98,6 +98,33 @@
   font-size: 14px;
 }
 
+//  コメント
+.comments-post{
+  margin-top: 30px;
+}
+
+.comments-header {
+  margin-top:20px;
+  color: rgb(88, 87, 87);
+}
+
+.fa-user{
+  color: #999;
+}
+
+.comment-list-user {
+  color: #999;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.comment-text{
+  color: rgb(111, 101, 101);
+}
+.delete-comment {
+  float: right;
+}
+
 /* posts/new ================================ */
 .posts-new textarea {
   font-size: 20px;
