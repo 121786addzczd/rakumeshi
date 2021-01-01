@@ -3,12 +3,12 @@
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
-        <% if @user.image.attached? %>
-          <%= image_tag @user.image %>
+        <% if @post.user.image.attached? %>
+          <%= image_tag @post.user.image %>
         <% else %>
           <%= image_tag "/images/default.jpg", class: "user-img"%>
         <% end %>
-        <%= link_to @user.nickname, user_path(@user.id) %>
+        <%= link_to @post.user.nickname, user_path(@post.user) %>
       </div>
       <p>
         <%= @post.content %>
@@ -27,6 +27,31 @@
           <%= link_to "削除", post_path(@post.id), method: :delete %>
         <% end %>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="comments-post">
+  <div class="form users-form">
+    <div class="form-body">
+      <% if user_signed_in? %>
+        <div class="comments-form" id="js-comment-form-post-<%= @post.id.to_s %>">
+          <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
+            <%= f.text_area :text, class: "post-comment", maxlength:"255",placeholder: "コメント ...", autocomplete: :off %>
+            <p class="comment-warn">
+              相手のことを考え丁寧なコメントを心がけましょう。
+              <br>
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            </p>
+            <%= f.submit "コメントする", class: :form__btn  %>
+          <% end %>
+        </div>
+        <% if @comments.present?%>
+          <div id="js-comment-post-<%= @post.id.to_s %>">
+              <%= render 'comment_list', post: @post %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
