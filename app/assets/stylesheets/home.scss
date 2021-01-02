@@ -131,7 +131,7 @@ header {
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
-  background-image: url("/top4.jpg");
+  background-image: url("/images/top4.jpg");
 }
 
 .top-message {
@@ -195,6 +195,12 @@ header {
   color: #ff4d75;
 }
 
+// jsプレビューのcss
+#js-preview {
+  width: 100%;
+  height: 350px;
+}
+
 .form input {
   width: 100%;
   border: 1px solid #d8dadf;
@@ -228,6 +234,15 @@ header {
   content: '';
   display: table;
   clear: both;
+}
+
+.devise-link  {
+  text-align: center;
+  margin: 10px 0 -20px 0;
+}
+
+.devise-link a {
+  color: #3754e1d8;
 }
 
 /* フラッシュ ================================ */
