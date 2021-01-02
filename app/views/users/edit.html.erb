@@ -14,9 +14,10 @@
             <%= f.text_field :nickname %>
           </div>
           <div class="field">
-              <%= f.label :image, "プロフィール画像" %><br />
-              <%= f.file_field :image, class: :form_image%>
-            </div>
+            <%= f.label :image, "プロフィール画像" %><br />
+              <div id="js-image"></div>
+            <%= f.file_field :image, class: :form_image %>
+          </div>
           <div class="field">
             <%= f.label :email, "メールアドレス" %>
             <%= f.email_field :email %>
@@ -26,6 +27,10 @@
             <%= f.submit "保存", class: :form__btn  %>
           </div>
         <% end %>
+
+        <p class="devise-link">
+          <%= link_to "編集を中止して戻る", user_path(current_user) %>
+        </p>
 
       </div>
     </div>
