@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get "about" => "home#about"
 
   resources :posts do
+    collection do
+      get 'search'
+    end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
@@ -24,5 +27,6 @@ Rails.application.routes.draw do
       get :likes
     end
   end
+
 
 end

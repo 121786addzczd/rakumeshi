@@ -1,11 +1,20 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">投稿する</h1>
-      <%= form_with(model: @post, local: true) do |f| %>
+      <%= form_with model: @post, url: posts_path, local: true do |f| %>
         <div class="form">
           <div class="form-body">
             <%= render 'shared/error_messages', model: f.object %>
-            <%= f.text_area :content, placeholder: "140文字まで投稿できます"%>
+            <%= f.label :content, "投稿の内容" %>
+            <%= f.text_area :content, size: "20x10", placeholder: "1000文字まで投稿できます" %>
+
+            <div class="tag-field", id='tag-field'>
+              <%= f.label :tag_name, "タグ" %>
+              <%= f.text_field :tag_name, class:"input-tag", id: :"js-tag-form", placeholder: "タグを複数つけるには , で区切ってください"  %>
+            </div>
+            <div id="js-search-result">
+            </div>
+
             <%= f.submit "投稿する"%>
           </div>
         </div>

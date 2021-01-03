@@ -11,7 +11,7 @@
       <li><%=link_to "フォロワー", followers_user_path(@user.id) %></li>
     </ul>
 
-    <% @likes.each do |like| %>
+    <% @likes.order(created_at: :desc).each do |like| %>
       <% post = Post.find_by(id: like.post_id) %>
 
       <div class="posts-index-item">
