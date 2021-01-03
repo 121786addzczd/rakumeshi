@@ -16,7 +16,11 @@
       <div class="post-time">
         <%= @post.created_at %>
       </div>
-
+      <% @tags.each do |tag| %>
+        <div class="post-time">
+          #<%= tag.tag_name %>
+        </div>
+      <% end %>
       <div id="js-like<%= @post.id %>">
         <%= render partial: "likes/like", locals: { post: @post} %>
       <div>

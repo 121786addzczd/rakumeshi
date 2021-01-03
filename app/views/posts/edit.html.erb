@@ -2,11 +2,12 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">編集する</h1>
-      <%= form_with(model: @post, local: true) do |f| %>
+      <%= form_with model: @post, local: true do |f| %>
         <div class="form">
           <div class="form-body">
             <%= render 'shared/error_messages', model: f.object %>
-            <%= f.text_area :content, placeholder:" 140文字まで投稿できます" %>
+            <%= f.label :content, "投稿の内容" %>
+            <%= f.text_area :content, placeholder:" 1000文字まで投稿できます" %>
             <%= f.submit "保存"%>
           </div>
         </div>

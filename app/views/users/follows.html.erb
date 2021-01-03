@@ -11,7 +11,7 @@
       <li><%=link_to "フォロワー", followers_user_path(@user.id) %></li>
     </ul>
 
-    <% @users.each do |user| %>
+    <% @users.order(created_at: :desc).each do |user| %>
 
       <div class="posts-index-item">
         <div class="post-left">
