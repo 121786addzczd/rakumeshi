@@ -5,7 +5,7 @@
     <%= image_tag "/images/default.jpg", class: "user-img"%>
   <% end %>
   <h2><%= @user.nickname %></h2>
-  <p><%= @user.email %></p>
+  <p><%= simple_format @user.self_introduction %></p>
   <P>投稿数:<%= link_to  @user.posts.count, user_path(@user.id), id:"follow-count" %></p>
   <p>
   フォロー数：<%= link_to @user.followings.count, follows_user_path(@user.id), id:"follow-count" %>

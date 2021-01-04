@@ -30,7 +30,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
 
   # ゲストユーザーログイン登録
   def self.guest
@@ -42,4 +42,5 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, uniqueness: true
 
+  validates :self_introduction, length: { maximum: 500 }
 end

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     if @user.update(user_params)
       flash[:notice] = "ユーザー情報を更新しました"
       redirect_to user_path(@user)
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :nickname, :image)
+    params.require(:user).permit(:email, :nickname, :image, :self_introduction)
   end
 
   def set_user

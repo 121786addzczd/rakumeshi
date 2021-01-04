@@ -8,7 +8,6 @@
         <%= form_with model: @user, url: user_path(current_user), local: true do |f| %>
           <%= render 'shared/error_messages', model: f.object %>
 
-
           <div class="field">
             <%= f.label :nickname, "ユーザー名" %>
             <%= f.text_field :nickname %>
@@ -21,6 +20,10 @@
           <div class="field">
             <%= f.label :email, "メールアドレス" %>
             <%= f.email_field :email %>
+          </div>
+          <div class="field">
+            <%= f.label :自己紹介, "自己紹介" %>
+            <%= f.text_area :self_introduction %>
           </div>
 
           <div class="actions">
