@@ -38,7 +38,7 @@ Ruby 2.6.5
 Rails 6.0.0
 
 ## ER図
-![demo](https://i.gyazo.com/f6bb2c43af888bea14bb8c09ac43b889.png)
+![](https://i.gyazo.com/f6bb2c43af888bea14bb8c09ac43b889.png)
 
 ## 各種機能＆導入技術
 - プラットフォーム（Heroku）
