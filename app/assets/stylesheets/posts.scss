@@ -10,6 +10,40 @@
   box-shadow: 0 2px 6px #c1ced7;
 }
 
+.search-form {
+  padding: 20px 30px;
+  background-color: rgb(224, 223, 223);
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.search-send {
+  background-color: #34e8df;
+  border-radius: 3px;
+  border: 1px solid #5d5d5d;
+    :hover{
+      opacity: 0.6;
+    }
+
+}
+
+.search-reset {
+  background-color: rgb(180, 180, 180);
+  border-radius: 3px;
+  border: 1px solid #595959;
+    :hover{
+      opacity: 0.6;
+    }
+}
+
+.search-input {
+  padding:6px;
+  border-radius: 3px;
+  border: 1px solid #595959;
+  width: 70%;
+}
+
+
 .post-left img {
   width: 50px;
   height: 50px;
@@ -106,6 +140,11 @@
 .comments-header {
   margin-top:20px;
   color: rgb(88, 87, 87);
+}
+
+.comment-nil {
+  opacity: 0.6;
+  padding:5px 0;
 }
 
 .fa-user{

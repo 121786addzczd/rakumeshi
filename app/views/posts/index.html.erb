@@ -1,6 +1,23 @@
 <% breadcrumb :posts %>
-<div class="main posts-index">
+  <div class="main posts-index">
   <div class="container">
+    <div class="search-form">
+      <div id="js-search">
+        <%= form_with url:posts_path, class: "form_class", method: 'get', local: true do |f| %>
+          <%= f.label :content_key, 'キーワードから探す' %>
+          <span><i class="fas fa-search"></i></span>
+          <div class="search-box" style="display: none;">
+            <%= f.text_field :content_key, class: "search-input" %>
+            <button class="search-send">
+              <%= f.submit '検索' %>
+            </button>
+            <button class="search-reset"><%= link_to 'リセット', posts_path %>
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">

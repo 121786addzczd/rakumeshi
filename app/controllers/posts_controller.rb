@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    if params[:content_key]
+      @posts = Post.where('content LIKE ?', "%#{params[:content_key]}%").order(created_at: :desc)
+    else
+      @posts = Post.includes(:user).order(created_at: :desc)
+    end
   end
 
   def new
