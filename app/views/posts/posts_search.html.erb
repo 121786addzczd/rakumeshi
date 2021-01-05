@@ -1,0 +1,41 @@
+<% breadcrumb :posts_search %>
+  <div class="main posts-index">
+  <div class="container">
+    <div class="search-form">
+      <%= form_with url:posts_search_posts_path, class: "form_class", method: 'get', local: true do |f| %>
+        <%= f.label :keyword, 'キーワードから探す' %>
+        <span><i class="fas fa-search"></i></span>
+        <div class="search-box">
+          <%= f.text_field :keyword, class: "search-input", placeholder: "投稿を検索する" %>
+          <button class="search-send">
+            <%= f.submit '検索' %>
+          </button>
+          <button class="search-reset"><%= link_to 'リセット', posts_path %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  <% if @posts.present? %>
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <% if post.user.image.attached? %>
+            <%=link_to image_tag post.user.image %>
+          <% else %>
+            <%= image_tag "/images/default.jpg", class: "user-img"%>
+          <% end %>
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to post.user.nickname, post_path(post.id) %>
+          </div>
+          <%= link_to post.content, post_path(post.id) %>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @posts %>
+  <% else %>
+    <p class="search-no-hit">※ 検索にヒットしませんでした ※</p>
+  <%end%>
+  </div>
+</div>

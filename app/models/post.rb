@@ -13,4 +13,12 @@ class Post < ApplicationRecord
     # user_idとpost_idが一致するlikeを検索する
     Like.find_by(user_id: user.id, post_id: id)
   end
+
+  def self.posts_search(search)
+    if search != ""
+      Post.where('content LIKE(?)', "%#{search}%")
+    else
+      Post.includes(:user)
+    end
+  end
 end

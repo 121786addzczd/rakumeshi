@@ -7,6 +7,11 @@ crumb :posts do
   parent :root
 end
 
+crumb :posts_search do
+  link "投稿検索", posts_search_posts_path
+  parent :posts
+end
+
 crumb :post_new do
   link "新規投稿", new_post_path
   parent :posts
