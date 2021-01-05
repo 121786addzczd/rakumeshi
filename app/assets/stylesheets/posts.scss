@@ -41,6 +41,12 @@
   border-radius: 3px;
   border: 1px solid #595959;
   width: 70%;
+  background-color: #fff;
+}
+
+.search-no-hit {
+  margin-top: 20px;
+  color:rgb(83, 84, 88);
 }
 
 
@@ -176,4 +182,16 @@
 .posts-new textarea::-webkit-input-placeholder {
   font-size: 24px;
   opacity: 0.5;
+}
+// ページネーション //
+.pagination {
+  color: #434343;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+    :hover{
+      cursor: pointer;
+      opacity: 0.6;
+      background-color: lightblue;
+    }
 }

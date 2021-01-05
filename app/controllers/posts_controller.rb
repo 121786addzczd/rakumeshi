@@ -3,11 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = if params[:content_key]
-               Post.where('content LIKE ?', "%#{params[:content_key]}%").order(created_at: :desc)
-             else
-               Post.includes(:user).order(created_at: :desc)
-             end
+    @posts = Post.includes(:user).page(params[:page]).per(10).order(created_at: :desc)
   end
 
   def new
@@ -52,8 +48,12 @@ class PostsController < ApplicationController
       flash[:notice] = '投稿を削除しました'
       redirect_to posts_path
     else
-      redirect_to posts_path
+      render :index
     end
+  end
+
+  def posts_search
+    @posts = Post.posts_search(params[:keyword]).includes(:user).page(params[:page]).per(10).order(created_at: :desc)
   end
 
   def search

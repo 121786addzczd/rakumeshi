@@ -3,11 +3,11 @@
   <div class="container">
     <div class="search-form">
       <div id="js-search">
-        <%= form_with url:posts_path, class: "form_class", method: 'get', local: true do |f| %>
-          <%= f.label :content_key, 'キーワードから探す' %>
+        <%= form_with url:posts_search_posts_path, class: "form_class", method: 'get', local: true do |f| %>
+          <%= f.label :keyword, 'キーワードから探す' %>
           <span><i class="fas fa-search"></i></span>
           <div class="search-box" style="display: none;">
-            <%= f.text_field :content_key, class: "search-input" %>
+            <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
             <button class="search-send">
               <%= f.submit '検索' %>
             </button>
@@ -35,5 +35,6 @@
         </div>
       </div>
     <% end %>
+      <%= paginate @posts %>
   </div>
 </div>
