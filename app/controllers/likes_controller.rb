@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_post, only: [:create, :destroy]
 
@@ -16,11 +15,12 @@ class LikesController < ApplicationController
   end
 
   private
-    def like_params
-      params.permit(:user_id, :post_id)
-    end
 
-    def set_post
-      @post = Post.find(params[:post_id])
-    end
+  def like_params
+    params.permit(:user_id, :post_id)
+  end
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 end

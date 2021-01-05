@@ -31,3 +31,4 @@ yarn-debug.log*
 .yarn-integrity
 public/images/
 README.md
+.Ds_Store

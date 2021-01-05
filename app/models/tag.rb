@@ -3,5 +3,4 @@ class Tag < ApplicationRecord
   has_many :posts, through: :tweet_tag_relations
 
   validates :tag_name, uniqueness: true
-
 end
