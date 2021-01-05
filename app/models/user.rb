@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   has_many :posts, dependent: :destroy
 
   has_many :likes, dependent: :destroy
@@ -9,15 +8,15 @@ class User < ApplicationRecord
   has_one_attached :image
 
   # ====================自分がフォローしているユーザーとの関連 ===================================
-  #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  # フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)
+  has_many :active_relationships, class_name: 'Relationship', foreign_key: :following_id
   # 中間テーブルを介して「follower」モデルのUser(フォローされた側)を集めることを「followings」と定義
   has_many :followings, through: :active_relationships, source: :follower
   # ========================================================================================
 
   # ====================自分がフォローされるユーザーとの関連 ===================================
-  #フォローされる側のUserから見て、フォローしてくる側のUserを(中間テーブルを介して)集める。なので親はfollower_id(フォローされる側)
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  # フォローされる側のUserから見て、フォローしてくる側のUserを(中間テーブルを介して)集める。なので親はfollower_id(フォローされる側)
+  has_many :passive_relationships, class_name: 'Relationship', foreign_key: :follower_id
   # 中間テーブルを介して「following」モデルのUser(フォローする側)を集めることを「followers」と定義
   has_many :followers, through: :passive_relationships, source: :following
   # =======================================================================================
@@ -30,13 +29,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 
   # ゲストユーザーログイン登録
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      user.nickname = "ゲストユーザー"
+      user.nickname = 'ゲストユーザー'
     end
   end
 

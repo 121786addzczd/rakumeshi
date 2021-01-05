@@ -7,6 +7,11 @@ crumb :posts do
   parent :root
 end
 
+crumb :post_new do
+  link "新規投稿", new_post_path
+  parent :posts
+end
+
 crumb :post do
   post = Post.find(params[:id])
   link "投稿詳細", post_path(post)
@@ -53,11 +58,6 @@ crumb :user_followers do
   link "フォロワ一覧", followers_user_path(user)
   parent :user_show
 end
-
-# crumb :post_edit do
-#   link "投稿編集", edit_post_path(post)
-#   parent :post
-# end
 
 # crumb :projects do
 #   link "Projects", projects_path

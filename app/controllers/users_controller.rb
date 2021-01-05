@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :authenticate_user!
 
   before_action :set_user, only: [:show, :edit, :update, :likes, :follows, :followers]
@@ -12,15 +11,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if @user.id != current_user.id
-      redirect_to user_path
-    end
+    redirect_to user_path if @user.id != current_user.id
   end
 
   def update
-    binding.pry
     if @user.update(user_params)
-      flash[:notice] = "ユーザー情報を更新しました"
+      flash[:notice] = 'ユーザー情報を更新しました'
       redirect_to user_path(@user)
     else
       render :edit
@@ -50,5 +46,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
 end

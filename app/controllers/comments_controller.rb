@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   before_action :authenticate_user!
 
   def create
@@ -8,7 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       respond_to :js
     else
-      flash[:alert] = "コメントに失敗しました"
+      flash[:alert] = 'コメントに失敗しました'
     end
   end
 
@@ -18,11 +17,12 @@ class CommentsController < ApplicationController
     if @comment.destroy
       respond_to :js
     else
-      flash[:alert] = "コメントの削除に失敗しました"
+      flash[:alert] = 'コメントの削除に失敗しました'
     end
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, post_id: params[:post_id])
   end

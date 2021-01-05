@@ -1,15 +1,13 @@
 class PostsController < ApplicationController
-
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-
   def index
-    if params[:content_key]
-      @posts = Post.where('content LIKE ?', "%#{params[:content_key]}%").order(created_at: :desc)
-    else
-      @posts = Post.includes(:user).order(created_at: :desc)
-    end
+    @posts = if params[:content_key]
+               Post.where('content LIKE ?', "%#{params[:content_key]}%").order(created_at: :desc)
+             else
+               Post.includes(:user).order(created_at: :desc)
+             end
   end
 
   def new
@@ -20,7 +18,7 @@ class PostsController < ApplicationController
     @post = PostsTag.new(post_params)
     if @post.valid?
       @post.save
-      flash[:notice] = "投稿を作成しました"
+      flash[:notice] = '投稿を作成しました'
       redirect_to posts_path
     else
       render :new
@@ -41,7 +39,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(update_params)
       @post.save
-      flash[:notice] = "投稿を編集しました"
+      flash[:notice] = '投稿を編集しました'
       redirect_to post_path(@post.id)
     else
       render :edit
@@ -51,31 +49,31 @@ class PostsController < ApplicationController
   def destroy
     if @post.user.id == current_user.id
       @post.destroy
-      flash[:notice] = "投稿を削除しました"
-      redirect_to posts_index_path
+      flash[:notice] = '投稿を削除しました'
+      redirect_to posts_path
     else
-      redirect_to posts_index_path
+      redirect_to posts_path
     end
   end
 
   def search
-    return nil if params[:keyword] == ""
-    tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"] )
-    render json:{ keyword: tag }
+    return nil if params[:keyword] == ''
+
+    tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"])
+    render json: { keyword: tag }
   end
 
-
   private
-    def post_params
-      params.require(:posts_tag).permit(:content, :tag_name).merge(user_id: current_user.id)
-    end
 
-    def update_params
-      params.require(:post).permit(:content).merge(user_id: current_user.id)
-    end
+  def post_params
+    params.require(:posts_tag).permit(:content, :tag_name).merge(user_id: current_user.id)
+  end
 
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  def update_params
+    params.require(:post).permit(:content).merge(user_id: current_user.id)
+  end
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
 end
