@@ -4,7 +4,7 @@ class PostsTag
 
   with_options presence: true do
     validates :content, length: { maximum: 1000 }
-    validates :tag_name
+    validates :tag_name, length: { maximum: 15 }
   end
 
   def save

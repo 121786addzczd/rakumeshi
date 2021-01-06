@@ -39,7 +39,7 @@ class User < ApplicationRecord
     end
   end
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 15 }
 
   validates :self_introduction, length: { maximum: 500 }
 end
