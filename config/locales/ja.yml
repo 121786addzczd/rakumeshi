@@ -5,6 +5,8 @@ ja:
         nickname: 名前
         self_introduction: 自己紹介
         image: プロフィール画像
+      post:
+        content: 投稿内容
 
   activemodel:
         attributes:
