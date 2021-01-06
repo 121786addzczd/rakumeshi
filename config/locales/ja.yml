@@ -1,7 +1,13 @@
 ja:
   activerecord:
     attributes:
-      post:
-        content: 内容
       user:
         nickname: 名前
+        self_introduction: 自己紹介
+        image: プロフィール画像
+
+  activemodel:
+        attributes:
+            posts_tag:
+                content: 投稿内容
+                tag_name: タグ
