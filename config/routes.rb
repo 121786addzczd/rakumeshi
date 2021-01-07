@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   get 'posts/index'
   root to: 'home#top'
 
-  get "about" => "home#about"
+  get  'home/about'
 
   resources :posts do
     collection do

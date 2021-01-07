@@ -2,6 +2,9 @@
   <div class="container">
     <div class="form-heading">ログイン</div>
     <div class="form users-form">
+      <div class="session-tittle">
+        <p>メールアドレスとパスワードでログイン</p>
+      </div>
       <div class="form-body">
         <div class='login-flash-message'>
           <%= flash[:notice] %>
@@ -31,10 +34,36 @@
     </div>
 
     <div class="form users-form">
+      <div class="session-tittle">
+        <p>テストユーザーとしてログイン</p>
+      </div>
+    </div>
+    <div class="form users-form">
       <div class="form-body">
         <p class="gest-login">
-          <%= link_to users_guest_sign_in_path, method: :post, class: "gest-login-btn" do %>
+          <%= link_to users_guest_sign_in_path, method: :post, class: "sns-btn" do %>
             <span class="fas fa-power-off"> ゲストユーザーとしてお試しログイン</span>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form users-form">
+      <div class="session-tittle">
+        <p>SNSアカウントでログイン</p>
+      </div>
+      <div class="form-body">
+        <p class="sns-facebook">
+          <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
+            <span class="fab fa-facebook-f"> Facebookでログイン</span>
+          <% end %>
+        </p>
+        <p class="sns-google">
+          <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
+            <span class="fab fa-google"> Googleでログイン</span>
+          <% end %>
+        <p class="sns-twitter">
+          <%= link_to user_twitter_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
+            <span class="fab fa-twitter"> twitterでログイン</span>
           <% end %>
         </p>
       </div>

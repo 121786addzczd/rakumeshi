@@ -64,3 +64,7 @@ gem "gretel"
 gem 'kaminari'
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

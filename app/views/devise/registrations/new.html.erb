@@ -16,15 +16,19 @@
             <%= f.email_field :email %>
           </div>
 
-          <div class="field">
-            <%= f.label :password, "パスワード   (6文字以上)" %>
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
+          <%if @sns_id.present? %>
+            <%= hidden_field_tag :sns_auth, true %>
+          <% else %>
+            <div class="field">
+              <%= f.label :password, "パスワード   (6文字以上)" %>
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
 
-          <div class="field">
-            <%= f.label :password_confirmation, "パスワード再入力" %>
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
-          </div>
+            <div class="field">
+              <%= f.label :password_confirmation, "パスワード再入力" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+          <% end %>
 
           <div class="actions">
             <%= f.submit "新規登録", class: :form__btn  %>
