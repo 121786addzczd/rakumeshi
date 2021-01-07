@@ -62,3 +62,16 @@
   background-color: #666;
   text-decoration: none;
 }
+
+// バリデーションのエラ-メッセージ
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.8vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
