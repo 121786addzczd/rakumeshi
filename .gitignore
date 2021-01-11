@@ -29,6 +29,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-public/images
-README.md
-.Ds_Store
+/public/images
+Ds_Store
