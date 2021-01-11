@@ -1,6 +1,16 @@
 <div class="main top-main">
   <div class="top-message">
-    <h2>ご飯の調達を楽して時間を手入れよう</h2>
+    <h2>ご飯を楽して時間を手入れよう</h2>
     <p>コスパの良い楽飯を共有しよう！</p>
   </div>
+  <% unless user_signed_in? %>
+    <div class="top-authentication">
+      <div class="top-authentication__sign-up-btn">
+        <%= link_to "アカウントを作成する", new_user_registration_path, class: "home-btn" %>
+      </div>
+      <div class="top-authentication__sign-in-btn">
+        <%= link_to "ログイン", new_user_session_path, class: "home-btn" %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'home#top'
+  get  'home/about'
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
@@ -9,14 +12,10 @@ Rails.application.routes.draw do
   end
 
   get 'posts/index'
-  root to: 'home#top'
-
-  get  'home/about'
 
   resources :posts do
     collection do
-      get 'search'
-      get 'posts_search'
+      get 'search', 'posts_search', 'follows'
     end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
@@ -24,13 +23,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
-    get :follows, on: :member
-    get :followers, on: :member
-
     member do
-      get :likes
+      get :likes, :follows, :followers
     end
   end
-
 
 end

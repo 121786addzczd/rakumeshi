@@ -7,6 +7,11 @@ crumb :posts do
   parent :root
 end
 
+crumb :posts_follows do
+  link "フォロー中の投稿一覧", follows_posts_path
+  parent :posts
+end
+
 crumb :posts_search do
   link "投稿検索", posts_search_posts_path
   parent :posts

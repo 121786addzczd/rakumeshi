@@ -1,5 +1,9 @@
 <% breadcrumb :posts %>
   <div class="main posts-index">
+    <% if user_signed_in? %>
+        <p><%= link_to 'フォロー中の投稿一覧はこちら', follows_posts_path, class:"follow-posts-index" %>
+    <% end %>
+
   <div class="container">
     <div class="search-form">
       <div id="js-search">
@@ -32,7 +36,7 @@
             <%= link_to post.user.nickname, post_path(post.id) %>
           </div>
           <%= link_to post.content, post_path(post.id) %>
-          <p class="post-date"><%= post.created_at.strftime("%Y年%m月%d日") %></p>
+          <p><%= post.created_at.strftime("%Y年%m月%d日") %></p>
         </div>
       </div>
     <% end %>

@@ -17,11 +17,20 @@
   box-shadow: 0 2px 6px #c1ced7;
 }
 
+.follow-posts-index {
+  color: #595959;
+  float: right;
+  opacity: 0.6;
+    &:hover{
+      opacity: 1;
+    }
+}
+
 .search-send {
   background-color: #34e8df;
   border-radius: 3px;
   border: 1px solid #5d5d5d;
-    :hover{
+    &:hover{
       opacity: 0.6;
     }
 
@@ -31,7 +40,7 @@
   background-color: rgb(180, 180, 180);
   border-radius: 3px;
   border: 1px solid #595959;
-    :hover{
+    &:hover{
       opacity: 0.6;
     }
 }
@@ -143,6 +152,9 @@
   color: #8899a6;
   text-decoration: underline;
   font-size: 14px;
+    &:hover{
+      color: #FF2581;
+    }
 }
 
 //  コメント
