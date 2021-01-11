@@ -14,7 +14,7 @@
         <%= simple_format @post.content %>
       </p>
       <div class="post-time">
-        <%= @post.created_at %>
+        <%= @post.created_at.strftime("%Y年%m月%d日") %>
       </div>
       <% @tags.each do |tag| %>
         <div class="post-time">

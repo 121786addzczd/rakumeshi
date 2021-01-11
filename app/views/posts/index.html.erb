@@ -32,6 +32,7 @@
             <%= link_to post.user.nickname, post_path(post.id) %>
           </div>
           <%= link_to post.content, post_path(post.id) %>
+          <p class="post-date"><%= post.created_at.strftime("%Y年%m月%d日") %></p>
         </div>
       </div>
     <% end %>
