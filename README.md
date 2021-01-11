@@ -43,12 +43,11 @@ Rails 6.0.0
 - コードチェック（rubocop）
 - ユーザー登録＆ログイン（devise)
 - 画像アップロード（active_storage、mini_magick、 AWS S3）
-- カレンダー（simple_calendar）
 - いいね、コメント投稿、　タグ入力（Ajax）
 - アプリケーションメッセージ日本語化(rails-i18n)
-- パンくずリスト（gretel
+- パンくずリスト（gretel)
 - ページネーション（kaminari)
-- 各種API（Google、Facebook,twitter）
+- 各種API（Google, Facebook, twitter）
 - エディタ（vsコード）
 ## トップページ
 ![](https://i.gyazo.com/aeb77edb8d4a9518593559591ab6d40a.jpg)
