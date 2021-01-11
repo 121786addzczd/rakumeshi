@@ -82,7 +82,10 @@
   color: #8899a6;
   text-decoration: underline;
   font-weight: 200;
-}
+    &:hover{
+      color: #FF2581;
+    }
+  }
 
 .user span {
   color: #afb6bf;
@@ -139,6 +142,9 @@
   padding:5px;
   text-align: center;
   border-radius: 2px;
+    &:hover{
+      opacity: 0.8;
+    }
 }
 
 .sns-btn {
@@ -154,6 +160,9 @@
   padding:5px;
   margin-bottom: 15px;
   text-align: center;
+    &:hover{
+      opacity: 0.8;
+    }
 }
 
 .sns-google {
@@ -163,6 +172,9 @@
   padding:5px;
   margin-bottom: 15px;
   text-align: center;
+    &:hover{
+      opacity: 0.8;
+    }
 }
 
 .sns-twitter {
@@ -171,6 +183,9 @@
   border-radius: 2px;
   padding:5px;
   text-align: center;
+    &:hover{
+      opacity: 0.8;
+    }
 }
 
 .sns-btn span:active {

@@ -63,6 +63,11 @@ class PostsController < ApplicationController
     render json: { keyword: tag }
   end
 
+  def follows
+    # following_idsは、フォローしているユーザーの全ての投稿を取得する
+    @posts = Post.where(user_id: [*current_user.following_ids]).page(params[:page]).per(10).order(created_at: :desc)
+  end
+
   private
 
   def post_params

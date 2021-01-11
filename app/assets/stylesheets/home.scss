@@ -78,6 +78,9 @@ header {
   color: white;
   font-size: 22px;
   line-height: 64px;
+  :hover{
+    color: rgb(232, 108, 31);
+  }
 }
 
 .header-logo a{
@@ -96,9 +99,9 @@ header {
   font-size: 13px;
   color: white;
   padding-left: 15px;
-    :hover{
-      color: rgb(232, 108, 31);
-    }
+  :hover{
+    color: rgb(232, 108, 31);
+  }
 }
 
 .header-menus a {
@@ -151,6 +154,44 @@ header {
 
 .top-main p {
   font-size: 24px;
+}
+
+.top-authentication {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__sign-up-btn {
+    opacity: 0.8;
+    background: #20a999;
+    border-radius: 30px;
+    padding: 4px;
+    white-space: nowrap;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 200px;
+    &:hover{
+      opacity: 1;
+    }
+      .home-btn{
+        color: #fff;
+      }
+  }
+  &__sign-in-btn {
+    opacity: 0.8;
+    background: #36bc33;
+    border-radius: 30px;
+    padding: 4px;
+    width: 200px;
+    &:hover{
+      opacity: 1;
+    }
+      .home-btn{
+        color: #fff;
+      }
+  }
 }
 
 /* about ================================ */
@@ -230,7 +271,9 @@ header {
   border-radius: 2px;
   margin-top: 8px;
   margin-bottom: 0;
-
+    &:hover{
+      opacity: 0.8;
+    }
 }
 
 .form-body:after {

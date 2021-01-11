@@ -52,13 +52,9 @@
           <% end %>
         </div>
         <% if user_signed_in? %>
-          <% if @comments.present?%>
             <div id="js-comment-post-<%= @post.id.to_s %>">
                 <%= render 'comment_list', post: @post %>
             </div>
-          <% else %>
-            <p class="comment-nil">この投稿のコメントはありません</p>
-          <% end %>
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
           </strong>
