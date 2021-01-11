@@ -16,6 +16,8 @@
 
 ![2871034e206e5d45ad688190c4376ced](https://user-images.githubusercontent.com/72346611/104146883-a9815480-540f-11eb-979f-c281d90878a7.gif)
 
+![19ef107a6077fcba75e1becf228f30f6](https://user-images.githubusercontent.com/72346611/104149928-6cbb5a80-541b-11eb-843b-0b43718f76e1.gif)
+
 
 ## URL
 https://rakumeshi.herokuapp.com
