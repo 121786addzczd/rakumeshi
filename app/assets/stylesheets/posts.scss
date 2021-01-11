@@ -78,6 +78,13 @@
   text-align: left;
 }
 
+.post-date{
+  float: right;
+  color: rgb(103, 101, 101);
+  opacity: 0.8;
+  font-size: 12px;
+}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;
